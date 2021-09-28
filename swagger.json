@@ -1,0 +1,65 @@
+{
+  "info": {
+    "title": "API DOC",
+    "description": "API DOC",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/v1/": {
+      "get": {
+        "summary": "Welcome page",
+        "description": "welcome",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/v1/name": {
+      "get": {
+        "summary": "name page",
+        "description": "print my name",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "string",
+            "required": true,
+            "description": "Your name",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "400": {
+            "description": "error"
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "responses": {},
+  "definitions": {},
+  "tags": [],
+  "swagger": "2.0",
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization"
+    }
+  }
+}
